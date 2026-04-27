@@ -47,6 +47,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        terracotta: "hsl(var(--terracotta))",
+        "olive-soft": "hsl(var(--olive-soft))",
+        linen: "hsl(var(--linen))",
+        earth: "hsl(var(--earth))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +66,17 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        display: ["var(--font-display)"],
+        body: ["var(--font-body)"],
+      },
+      backgroundImage: {
+        "hero-villa": "var(--gradient-hero)",
+        "seal-villa": "var(--gradient-seal)",
+      },
+      boxShadow: {
+        botanical: "var(--shadow-botanical)",
       },
       keyframes: {
         "accordion-down": {
@@ -80,10 +95,15 @@ export default {
             height: "0",
           },
         },
+        "slow-drift": {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) rotate(0deg)" },
+          "50%": { transform: "translate3d(10px, -12px, 0) rotate(2deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slow-drift": "slow-drift 10s ease-in-out infinite",
       },
     },
   },
