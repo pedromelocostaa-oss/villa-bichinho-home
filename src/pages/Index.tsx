@@ -1,15 +1,12 @@
+import villaBichinhoLogo from "@/assets/villa-bichinho-logo.svg";
+
 const highlights = ["Hospedagem acolhedora", "Natureza ao redor", "Experiência local"];
 
 const VillaLogo = () => (
-  <div className="group relative mx-auto flex aspect-square w-40 items-center justify-center rounded-full border border-primary/25 bg-linen shadow-botanical transition-transform duration-500 hover:-translate-y-1 sm:w-52">
-    <div className="absolute inset-3 rounded-full border border-terracotta/35" />
-    <div className="absolute -left-5 top-10 h-16 w-8 rounded-full border border-olive-soft/50 animate-slow-drift" />
-    <div className="absolute -right-4 bottom-12 h-14 w-7 rounded-full border border-terracotta/45 animate-slow-drift" />
-    <div className="text-center leading-none">
-      <p className="font-body text-[0.62rem] font-bold uppercase tracking-[0.38em] text-primary/75">Villa</p>
-      <h1 className="mt-1 font-display text-4xl font-bold text-primary sm:text-5xl">Bichinho</h1>
-      <p className="mt-2 font-body text-[0.58rem] font-bold uppercase tracking-[0.28em] text-terracotta">Minas Gerais</p>
-    </div>
+  <div className="group relative mx-auto flex aspect-square w-52 items-center justify-center rounded-full border border-primary/25 bg-linen p-3 shadow-botanical transition-transform duration-500 hover:-translate-y-1 sm:w-72">
+    <div className="absolute -left-5 top-12 h-16 w-8 rounded-full border border-olive-soft/50 animate-slow-drift" />
+    <div className="absolute -right-4 bottom-14 h-14 w-7 rounded-full border border-terracotta/45 animate-slow-drift" />
+    <img src={villaBichinhoLogo} alt="Logo Villa Bichinho" className="relative h-full w-full object-contain" />
   </div>
 );
 
