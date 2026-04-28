@@ -7,6 +7,7 @@ const MAPS_URL = `https://www.google.com/maps/dir/?api=1&destination=${COORDS.la
 const EMBED_URL = `https://www.openstreetmap.org/export/embed.html?bbox=${COORDS.lng - 0.01},${COORDS.lat - 0.01},${COORDS.lng + 0.01},${COORDS.lat + 0.01}&layer=mapnik&marker=${COORDS.lat},${COORDS.lng}`;
 
 const distances = [
+  { from: "Belo Horizonte", km: "200 km", time: "~2h30 de carro", detail: "Via BR-040 e BR-265" },
   { from: "São Paulo", km: "328 km", time: "~4h de carro", detail: "Via Rodovia Fernão Dias (BR-381)" },
   { from: "Rio de Janeiro", km: "356 km", time: "~4h30 de carro", detail: "Via BR-040 e BR-265" },
   { from: "Tiradentes", km: "8 km", time: "~15 min", detail: "Estrada histórica pela serra" },
