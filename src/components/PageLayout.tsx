@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { IconArrowLeft, IconWhatsApp } from "./Icons";
 
-const WHATSAPP_FAB_URL = `https://wa.me/5532999999999?text=${encodeURIComponent("Olá, equipe da Vila Bichinho! Gostaria de uma orientação durante a minha estadia.")}`;
+const WHATSAPP_FAB_URL = `https://wa.me/5532999364977?text=${encodeURIComponent("Olá, equipe da Vila Bichinho! Gostaria de uma orientação durante a minha estadia.")}`;
 
 interface PageLayoutProps {
   children: React.ReactNode;

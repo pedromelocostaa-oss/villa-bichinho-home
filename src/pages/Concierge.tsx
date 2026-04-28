@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components/PageLayout";
 import { IconWhatsApp, IconExternal } from "@/components/Icons";
 
-const WHATSAPP = "5532999999999";
+const WHATSAPP = "5532999364977";
 const WHATSAPP_MESSAGE = "Olá, equipe da Vila Bichinho! Gostaria de uma orientação durante a minha estadia.";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
