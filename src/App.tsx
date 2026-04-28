@@ -11,6 +11,7 @@ import Convivencia from "./pages/Convivencia.tsx";
 import Experiencia from "./pages/Experiencia.tsx";
 import GuiaLocal from "./pages/GuiaLocal.tsx";
 import Contato from "./pages/Contato.tsx";
+import Concierge from "./pages/Concierge.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/experiencia" element={<Experiencia />} />
           <Route path="/guia-local" element={<GuiaLocal />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/concierge" element={<Concierge />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

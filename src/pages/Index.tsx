@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import villaBichinhoLogo from "@/assets/villa-bichinho-logo.svg";
 import {
   IconLeaf, IconKey, IconMap, IconWifi,
-  IconHands, IconCup, IconCompass, IconPhone,
+  IconHands, IconCup, IconCompass, IconPhone, IconWhatsApp,
 } from "@/components/Icons";
 
 const navItems = [
@@ -14,6 +14,7 @@ const navItems = [
   { label: "Na Villa", sub: "Café, áreas & banheira", path: "/experiencia", Icon: IconCup, delay: "delay-600" },
   { label: "Guia Local", sub: "O melhor de Bichinho", path: "/guia-local", Icon: IconCompass, delay: "delay-700" },
   { label: "Contato", sub: "Estamos aqui", path: "/contato", Icon: IconPhone, delay: "delay-800" },
+  { label: "Concierge", sub: "Fale pelo WhatsApp", path: "/concierge", Icon: IconWhatsApp, delay: "delay-900" },
 ];
 
 const Index = () => {

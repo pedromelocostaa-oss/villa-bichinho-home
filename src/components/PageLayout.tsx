@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { IconArrowLeft } from "./Icons";
+import { IconArrowLeft, IconWhatsApp } from "./Icons";
+
+const WHATSAPP_FAB_URL = `https://wa.me/5532999999999?text=${encodeURIComponent("Olá, equipe da Vila Bichinho! Gostaria de uma orientação durante a minha estadia.")}`;
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -48,6 +50,16 @@ export const PageLayout = ({ children, title, subtitle, icon }: PageLayoutProps)
           Villa Bichinho · Bichinho, MG
         </p>
       </footer>
+
+      <a
+        href={WHATSAPP_FAB_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar com o concierge via WhatsApp"
+        className="fixed bottom-6 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-primary text-primary-foreground shadow-botanical transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
+      >
+        <IconWhatsApp className="h-5 w-5" />
+      </a>
     </div>
   );
 };

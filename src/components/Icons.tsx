@@ -110,3 +110,10 @@ export const IconExternal = ({ className = "" }: { className?: string }) => (
     <line x1="10" y1="14" x2="21" y2="3" />
   </svg>
 );
+
+export const IconWhatsApp = ({ className = "" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M24 9C16 9 10 15 10 22c0 4 2 7.5 5 9.8L12 39l7.5-3.5C21 36 22.5 36.3 24 36.3c8 0 14-6 14-14.3C38 15 32 9 24 9z" />
+    <path d="M19 20.5c0-.7.4-1.1.9-1.1h1.5l1 2.5-1.2 1.2c.6 1.2 1.8 2.4 3 3l1.2-1.2 2.5 1v1.5c0 .5-.4.9-1.1.9C23 28.3 19 24.3 19 20.5z" />
+  </svg>
+);
