@@ -8,7 +8,7 @@ const contacts = [
   {
     label: "WhatsApp principal",
     value: "+55 (32) 99936-4977",
-    desc: "Para dúvidas, pedidos e suporte durante a estadia",
+    desc: "Para qualquer necessidade durante a estadia — pequena ou urgente",
     url: WHATSAPP_URL,
     cta: "Abrir conversa",
     primary: true,
@@ -16,7 +16,7 @@ const contacts = [
   {
     label: "E-mail",
     value: "villabichinho@gmail.com",
-    desc: "Para reservas e informações gerais",
+    desc: "Para reservas, informações e solicitações com antecedência",
     url: "mailto:villabichinho@gmail.com",
     cta: "Enviar e-mail",
     primary: false,
@@ -24,21 +24,27 @@ const contacts = [
 ];
 
 const faqs = [
-  { question: "Posso fazer check-in antes das 14h?", answer: "Sim, mediante disponibilidade. Entre em contato pelo WhatsApp com antecedência." },
+  { question: "Posso fazer check-in antes das 14h?", answer: "Sim, mediante disponibilidade. Entre em contato pelo WhatsApp com antecedência — fazemos o possível para recebê-lo bem." },
   { question: "Há estacionamento na Villa?", answer: "Sim, temos área de estacionamento privativa para hóspedes." },
   { question: "O café da manhã está incluso na diária?", answer: "Sim, o café da manhã completo é cortesia para todos os hóspedes." },
   { question: "A Villa aceita pets?", answer: "Aceitamos animais de estimação com consulta prévia. Fale conosco antes de reservar." },
 ];
 
 const Contato = () => (
-  <PageLayout title="Contato" subtitle="Estamos aqui para você" icon={<IconPhone className="h-full w-full" />}>
+  <PageLayout title="Contatos" subtitle="Apoios para sua estadia" icon={<IconPhone className="h-full w-full" />}>
     <div className="px-5 py-8 space-y-6">
-      <div className="animate-fade-up rounded-lg border border-border/60 bg-card/50 px-6 py-5">
+
+      <div className="animate-fade-up rounded-lg border border-border/60 bg-card/50 px-6 py-6">
+        <p className="font-display text-xl font-medium text-primary leading-snug mb-3">
+          Estamos aqui.
+        </p>
         <p className="font-body text-sm leading-relaxed text-earth">
-          Nossa equipe está disponível para atendê-lo durante toda a estadia.
-          Para qualquer necessidade — pequena ou urgente — não hesite em nos contatar.
+          Nossa equipe está presente durante toda a sua estadia. Para qualquer
+          necessidade — uma dúvida, um pedido, uma indicação — não hesite.
+          Hospitalidade, para nós, começa no detalhe.
         </p>
       </div>
+
       <div className="animate-fade-up delay-100 space-y-3">
         {contacts.map(({ label, value, desc, url, cta, primary }) => (
           <div key={label} className={`rounded-lg border px-5 py-5 ${primary ? "border-primary/25 bg-primary/5" : "border-border/60 bg-card/40"}`}>
@@ -59,6 +65,7 @@ const Contato = () => (
           </div>
         ))}
       </div>
+
       <div className="animate-fade-up delay-200 rounded-lg border border-red-200/60 bg-red-50/30 px-5 py-5">
         <p className="font-body text-[10px] font-semibold uppercase tracking-[0.25em] text-red-600/70 mb-2">Emergências</p>
         <p className="font-body text-sm leading-relaxed text-earth mb-3">Em caso de emergência médica ou situação urgente:</p>
@@ -71,6 +78,7 @@ const Contato = () => (
           ))}
         </div>
       </div>
+
       <div className="animate-fade-up delay-300">
         <p className="font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/50 mb-3 px-1">Dúvidas frequentes</p>
         <div className="space-y-2">
@@ -82,6 +90,7 @@ const Contato = () => (
           ))}
         </div>
       </div>
+
     </div>
   </PageLayout>
 );

@@ -1,82 +1,117 @@
-import { useState } from "react";
 import { PageLayout } from "@/components/PageLayout";
 import { IconCompass } from "@/components/Icons";
 
-type Category = "todos" | "comer" | "atelies" | "passeios";
+type MomentKey = "almoco" | "doce" | "jantar";
 
-const places: { name: string; category: Category; tag: string; desc: string; tip: string }[] = [
-  { name: "Bistrô do Vale", category: "comer", tag: "Restaurante", desc: "Culinária mineira contemporânea com ingredientes da região. Ambiente charmoso no centro histórico de Bichinho.", tip: "Reserve mesa para o jantar — costuma lotar nos fins de semana." },
-  { name: "Café das Pedras", category: "comer", tag: "Café", desc: "Café especial, bolos artesanais e brunch. O lugar perfeito para começar a manhã sem pressa.", tip: "O cappuccino com canela e o pão de queijo recém-saído do forno são imperdíveis." },
-  { name: "Doceria da Marta", category: "comer", tag: "Doceria", desc: "Doces mineiros tradicionais feitos à mão: goiabada, doce de leite, cocadas e muito mais.", tip: "Leve algo de presente. Funciona também como bela lembrança de viagem." },
-  { name: "Ateliê das Formas", category: "atelies", tag: "Cerâmica", desc: "Peças únicas em pedra-sabão e cerâmica. Um dos ateliês mais bonitos de Bichinho, com trabalhos que dialogam com a paisagem.", tip: "Pergunte se há aula ou demonstração disponível durante sua visita." },
-  { name: "Galeria do Campo", category: "atelies", tag: "Arte & Escultura", desc: "Esculturas, gravuras e pinturas de artistas locais e convidados. Uma galeria pequena, curada com cuidado.", tip: "As peças têm certificado de autenticidade. Boa escolha para colecionadores." },
-  { name: "Ateliê Linhas Vivas", category: "atelies", tag: "Têxtil & Bordado", desc: "Bordados, tapeçarias e tecidos artesanais produzidos por artesãs locais. Um patrimônio vivo da cultura mineira.", tip: "Aberto somente nas manhãs. Chegue cedo para conversar com as bordadeiras." },
-  { name: "Trilha da Serra Verde", category: "passeios", tag: "Natureza", desc: "Trilha moderada com vista privilegiada do vale. Cerca de 2h de caminhada. Imperdível ao entardecer.", tip: "Leve água, protetor solar e calçado fechado. A vista lá de cima compensa tudo." },
-  { name: "Cachoeira do Ribeirão", category: "passeios", tag: "Passeio", desc: "Cachoeira de beleza natural a 15 min de carro da Villa. Perfeita para um banho de rio refrescante.", tip: "Consulte a equipe da Villa sobre as condições do trajeto antes de ir." },
-  { name: "Prados & Tiradentes", category: "passeios", tag: "Cidades históricas", desc: "A 20 min de carro, Tiradentes é patrimônio histórico com arquitetura colonial, museus e gastronomia refinada.", tip: "Reserve um dia inteiro para Tiradentes — há muito para explorar com calma." },
+const favorites: {
+  name: string;
+  moment: MomentKey;
+  desc: string;
+  special: string;
+  occasion: string;
+}[] = [
+  {
+    name: "Tempero da Ângela",
+    moment: "almoco",
+    desc: "A cozinha da Ângela é um elogio à tradição. Frango com quiabo, tutu de feijão, lombo com molho de laranja — receitas que chegam à mesa como uma carta de amor ao interior mineiro.",
+    special: "Cada prato tem história e tem afeto. O tipo de almoço que faz você desacelerar de verdade.",
+    occasion: "Almoço de domingo, sem pressa",
+  },
+  {
+    name: "Gelados da Vila",
+    moment: "doce",
+    desc: "Sorvetes artesanais com sabores que traduzem o lugar: cajá, jabuticaba, doce de leite com rapadura e surpresas de temporada que mudam conforme o quintal.",
+    special: "Pequeno, inventivo e irresistível. O tipo de parada que vira ritual.",
+    occasion: "Pausa da tarde, sempre",
+  },
+  {
+    name: "Tragaluz",
+    moment: "jantar",
+    desc: "Uma das mesas mais bonitas da região. Cozinha contemporânea que dialoga com a tradição mineira, em ambiente com luz filtrada, pedra e madeira — sofisticação sem esforço.",
+    special: "A carta de vinhos é cuidada e os pratos chegam com detalhes que contam histórias.",
+    occasion: "Jantar especial ou almoço comemorativo",
+  },
+  {
+    name: "Pacco & Bacco",
+    moment: "jantar",
+    desc: "Italiana de alma no coração de Tiradentes. Massas frescas, crostini e risotos que lembram uma trattoria do interior da Itália — com ingredientes do cerrado mineiro.",
+    special: "A conversa entre os sabores italianos e o terroir local é surpreendente.",
+    occasion: "Jantar romântico ou encontro entre amigos",
+  },
+  {
+    name: "Via Destra",
+    moment: "jantar",
+    desc: "Ambiente refinado com culinária italiana e carta de vinhos selecionada. Um dos endereços mais queridos de Tiradentes para quem aprecia uma boa mesa.",
+    special: "O serviço atencioso faz a experiência durar mais do que a refeição.",
+    occasion: "Noite especial em Tiradentes",
+  },
+  {
+    name: "Viradas do Largo",
+    moment: "jantar",
+    desc: "Patrimônio gastronômico de Tiradentes. Numa das esquinas mais bonitas da cidade colonial, celebra a cozinha mineira com apuro contemporâneo e vista para a praça.",
+    special: "Arquitetura colonial, pratos que celebram Minas com elegância e uma atmosfera inigualável.",
+    occasion: "Jantar inesquecível em Tiradentes",
+  },
 ];
 
-const categories: { key: Category; label: string }[] = [
-  { key: "todos", label: "Todos" },
-  { key: "comer", label: "Comer & Beber" },
-  { key: "atelies", label: "Ateliês" },
-  { key: "passeios", label: "Passeios" },
+const moments: { key: MomentKey; label: string }[] = [
+  { key: "almoco", label: "para almoço sem pressa" },
+  { key: "doce", label: "para uma pausa doce" },
+  { key: "jantar", label: "para jantar especial" },
 ];
 
-const GuiaLocal = () => {
-  const [active, setActive] = useState<Category>("todos");
-  const filtered = active === "todos" ? places : places.filter((p) => p.category === active);
+const FavCard = ({ name, desc, special, occasion }: (typeof favorites)[0]) => (
+  <div className="rounded-lg border border-border/50 bg-card/40 px-5 py-5 transition-all duration-200 hover:border-primary/20 hover:bg-card/60">
+    <h3 className="font-display text-lg font-medium text-primary leading-tight mb-2">{name}</h3>
+    <p className="font-body text-sm leading-relaxed text-earth mb-3">{desc}</p>
+    <p className="font-body text-xs leading-relaxed text-muted-foreground mb-3 italic">
+      {special}
+    </p>
+    <div className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-background/50 px-3 py-1">
+      <div className="h-1 w-1 rounded-full bg-primary/30" />
+      <span className="font-body text-[10px] font-medium text-primary/60 tracking-wide">{occasion}</span>
+    </div>
+  </div>
+);
 
-  return (
-    <PageLayout title="Guia Local" subtitle="O melhor de Bichinho" icon={<IconCompass className="h-full w-full" />}>
-      <div className="px-5 py-8 space-y-6">
-        <div className="animate-fade-up rounded-lg border border-border/60 bg-card/50 px-6 py-5">
-          <p className="font-body text-sm leading-relaxed text-earth">
-            Bichinho é pequeno, mas intenso. Cada estabelecimento aqui foi escolhido pela equipe
-            da Villa — lugares que honram a identidade do lugar e que valem muito a visita.
-          </p>
-        </div>
-        <div className="animate-fade-up delay-100 flex gap-2 overflow-x-auto pb-1">
-          {categories.map(({ key, label }) => (
-            <button
-              key={key}
-              onClick={() => setActive(key)}
-              className={`shrink-0 rounded-full border px-4 py-2 font-body text-xs font-semibold transition-all duration-200 ${
-                active === key
-                  ? "border-primary/30 bg-primary text-primary-foreground"
-                  : "border-border/60 bg-card/40 text-muted-foreground hover:border-primary/20 hover:bg-card hover:text-primary"
-              }`}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-        <div className="animate-fade-up delay-200 space-y-3">
-          {filtered.map(({ name, tag, desc, tip }) => (
-            <div key={name} className="rounded-lg border border-border/50 bg-card/40 px-5 py-4 transition-all duration-200 hover:border-primary/20 hover:bg-card/60">
-              <div className="flex items-start justify-between gap-3 mb-2">
-                <h3 className="font-display text-base font-medium text-primary leading-tight">{name}</h3>
-                <span className="shrink-0 rounded-full border border-border/50 bg-background/60 px-2.5 py-0.5 font-body text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">{tag}</span>
-              </div>
-              <p className="font-body text-xs leading-relaxed text-earth mb-3">{desc}</p>
-              <div className="rounded border border-border/40 bg-background/30 px-3 py-2">
-                <p className="font-body text-[11px] leading-relaxed text-muted-foreground">
-                  <span className="font-semibold text-primary/60">Dica: </span>{tip}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="animate-fade-up delay-300 rounded-lg border border-primary/10 bg-primary/5 px-5 py-4">
-          <p className="font-body text-xs leading-relaxed text-earth">
-            <span className="font-semibold text-primary/70">Quer uma indicação personalizada? </span>
-            A equipe da Villa conhece cada canto de Bichinho e adora ajudar com sugestões
-            de acordo com o seu estilo. Nos chame no WhatsApp.
-          </p>
-        </div>
+const FavoritosVila = () => (
+  <PageLayout title="Favoritos da Vila" subtitle="Curadoria dos anfitriões" icon={<IconCompass className="h-full w-full" />}>
+    <div className="px-5 py-8 space-y-8">
+
+      <div className="animate-fade-up rounded-lg border border-border/60 bg-card/50 px-6 py-6">
+        <p className="font-display text-xl font-medium text-primary leading-snug mb-3">
+          Uma curadoria com afeto.
+        </p>
+        <p className="font-body text-sm leading-relaxed text-earth">
+          Estes são os nossos lugares favoritos — os que indicamos com convicção, os que voltamos
+          sempre que podemos. Pequena lista, muita personalidade.
+        </p>
       </div>
-    </PageLayout>
-  );
-};
 
-export default GuiaLocal;
+      {moments.map(({ key, label }, i) => {
+        const items = favorites.filter((f) => f.moment === key);
+        return (
+          <div key={key} className={`animate-fade-up delay-${(i + 1) * 100}`}>
+            <p className="font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/50 mb-3 px-1">
+              {label}
+            </p>
+            <div className="space-y-3">
+              {items.map((fav) => <FavCard key={fav.name} {...fav} />)}
+            </div>
+          </div>
+        );
+      })}
+
+      <div className="animate-fade-up delay-400 rounded-lg border border-primary/10 bg-primary/5 px-5 py-5">
+        <p className="font-display text-base font-medium text-primary mb-2">Quer uma sugestão personalizada?</p>
+        <p className="font-body text-sm leading-relaxed text-earth">
+          A equipe da Vila conhece cada canto de Bichinho e adora indicar de acordo com o seu
+          momento. Uma mensagem no WhatsApp resolve.
+        </p>
+      </div>
+
+    </div>
+  </PageLayout>
+);
+
+export default FavoritosVila;
