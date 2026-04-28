@@ -1,13 +1,13 @@
 import { PageLayout } from "@/components/PageLayout";
 import { IconPhone, IconExternal } from "@/components/Icons";
 
-const WHATSAPP = "5532999999999";
+const WHATSAPP = "5532999364977";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}`;
 
 const contacts = [
   {
     label: "WhatsApp principal",
-    value: "+55 (32) 9 9999-9999",
+    value: "+55 (32) 99936-4977",
     desc: "Para dúvidas, pedidos e suporte durante a estadia",
     url: WHATSAPP_URL,
     cta: "Abrir conversa",
@@ -15,9 +15,9 @@ const contacts = [
   },
   {
     label: "E-mail",
-    value: "contato@villabichinho.com.br",
+    value: "villabichinho@gmail.com",
     desc: "Para reservas e informações gerais",
-    url: "mailto:contato@villabichinho.com.br",
+    url: "mailto:villabichinho@gmail.com",
     cta: "Enviar e-mail",
     primary: false,
   },
