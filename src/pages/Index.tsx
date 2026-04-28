@@ -1,54 +1,96 @@
+import { useNavigate } from "react-router-dom";
 import villaBichinhoLogo from "@/assets/villa-bichinho-logo.svg";
+import {
+  IconLeaf, IconKey, IconMap, IconWifi,
+  IconHands, IconCup, IconCompass, IconPhone,
+} from "@/components/Icons";
 
-const highlights = ["Hospedagem acolhedora", "Natureza ao redor", "Experiência local"];
-
-const VillaLogo = () => (
-  <div className="group relative mx-auto flex aspect-square w-52 items-center justify-center rounded-full border border-primary/25 bg-linen p-3 shadow-botanical transition-transform duration-500 hover:-translate-y-1 sm:w-72">
-    <div className="absolute -left-5 top-12 h-16 w-8 rounded-full border border-olive-soft/50 animate-slow-drift" />
-    <div className="absolute -right-4 bottom-14 h-14 w-7 rounded-full border border-terracotta/45 animate-slow-drift" />
-    <img src={villaBichinhoLogo} alt="Logo Villa Bichinho" className="relative h-full w-full object-contain" />
-  </div>
-);
+const navItems = [
+  { label: "Bem-vindo", sub: "Nossa história", path: "/bemvindo", Icon: IconLeaf, delay: "delay-200" },
+  { label: "Check-in", sub: "Horários & chegada", path: "/checkin", Icon: IconKey, delay: "delay-300" },
+  { label: "Localização", sub: "Como nos encontrar", path: "/localizacao", Icon: IconMap, delay: "delay-400" },
+  { label: "Wi-Fi", sub: "Rede & senha", path: "/wifi", Icon: IconWifi, delay: "delay-500" },
+  { label: "Convivência", sub: "Nossa casa, seu lar", path: "/convivencia", Icon: IconHands, delay: "delay-500" },
+  { label: "Na Villa", sub: "Café, áreas & banheira", path: "/experiencia", Icon: IconCup, delay: "delay-600" },
+  { label: "Guia Local", sub: "O melhor de Bichinho", path: "/guia-local", Icon: IconCompass, delay: "delay-700" },
+  { label: "Contato", sub: "Estamos aqui", path: "/contato", Icon: IconPhone, delay: "delay-800" },
+];
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
-    <main className="min-h-screen overflow-hidden bg-hero-villa text-foreground">
-      <section className="relative flex min-h-screen items-center px-6 py-10 sm:px-10">
-        <div className="absolute left-0 top-0 h-full w-full opacity-45 [background-image:linear-gradient(hsl(var(--primary)/0.08)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--primary)/0.07)_1px,transparent_1px)] [background-size:72px_72px]" />
-        <div className="absolute -right-24 top-20 h-72 w-72 rounded-full border border-primary/10" />
-        <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full border border-terracotta/15" />
+    <div className="min-h-screen bg-background">
+      <div className="mx-auto max-w-lg px-5">
 
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-[0.95fr_1.05fr]">
-          <div className="text-center md:text-left">
-            <p className="mb-5 font-body text-xs font-bold uppercase tracking-[0.32em] text-terracotta">Refúgio de charme</p>
-            <h2 className="font-display text-5xl font-semibold leading-[0.95] text-primary sm:text-7xl lg:text-8xl">
-              Villa Bichinho
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-earth md:mx-0">
-              Um lugar de pausa, natureza e hospitalidade simples para sentir o tempo passar com mais calma.
-            </p>
+        <header className="animate-fade-up pt-10 pb-8 text-center">
+          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border border-border bg-sand shadow-card overflow-hidden">
+            <img
+              src={villaBichinhoLogo}
+              alt="Villa Bichinho"
+              className="h-full w-full object-contain"
+            />
           </div>
+          <p className="mb-2 font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-terracotta">
+            Guia do Hóspede
+          </p>
+          <h1 className="font-display text-4xl font-medium leading-tight text-primary">
+            Villa Bichinho
+          </h1>
+        </header>
 
-          <div className="relative">
-            <div className="absolute inset-0 translate-y-8 rounded-full bg-accent/30 blur-3xl" />
-            <div className="relative border border-primary/15 bg-card/70 px-6 py-10 shadow-botanical backdrop-blur-sm sm:px-12 sm:py-14">
-              <VillaLogo />
-              <div className="mt-10 grid gap-3 sm:grid-cols-3">
-                {highlights.map((item) => (
-                  <div key={item} className="border border-primary/15 bg-background/55 p-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-primary transition-colors duration-300 hover:bg-linen">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
+        <div className="animate-fade-up delay-100 mb-8 rounded-lg border border-border/60 bg-card/60 px-6 py-6">
+          <p className="font-display text-xl font-medium leading-snug text-primary mb-3">
+            Seja bem-vindo.
+          </p>
+          <p className="font-body text-sm leading-relaxed text-earth">
+            Um lugar para desacelerar, respirar fundo e se reconectar com o tempo das coisas simples.
+            Entre a natureza, o silêncio e a beleza dos detalhes, cada espaço foi pensado para ser
+            vivido com calma.
+          </p>
+          <p className="mt-3 font-body text-sm leading-relaxed text-earth">
+            Este guia reúne tudo que você precisa para que sua estadia seja leve, intuitiva e ainda
+            mais especial.
+          </p>
+          <div className="mt-5 flex items-center gap-2">
+            <div className="h-px flex-1 bg-border/60" />
+            <span className="font-body text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+              Bichinho · MG
+            </span>
+            <div className="h-px flex-1 bg-border/60" />
           </div>
         </div>
-      </section>
 
-      <footer className="border-t border-primary/15 px-6 py-6 text-center text-xs font-bold uppercase tracking-[0.24em] text-primary/70">
-        Villa Bichinho · Estadia com alma mineira
-      </footer>
-    </main>
+        <nav className="mb-10 grid grid-cols-2 gap-3">
+          {navItems.map(({ label, sub, path, Icon, delay }) => (
+            <button
+              key={path}
+              onClick={() => navigate(path)}
+              className={`animate-fade-up ${delay} group relative flex flex-col items-start gap-4 rounded-lg border border-border/70 bg-card/50 p-5 text-left transition-all duration-300 hover:border-primary/30 hover:bg-card hover:shadow-card active:scale-[0.98]`}
+            >
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-border/80 bg-background/80 text-primary/60 transition-all duration-300 group-hover:border-primary/30 group-hover:bg-sand group-hover:text-primary">
+                <Icon className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-body text-sm font-semibold text-primary leading-tight">
+                  {label}
+                </p>
+                <p className="mt-0.5 font-body text-xs text-muted-foreground leading-tight">
+                  {sub}
+                </p>
+              </div>
+              <div className="absolute right-4 top-4 h-1.5 w-1.5 rounded-full bg-primary/15 transition-colors duration-300 group-hover:bg-primary/30" />
+            </button>
+          ))}
+        </nav>
+
+        <div className="mb-10 text-center">
+          <p className="font-body text-[10px] font-medium uppercase tracking-[0.25em] text-primary/35">
+            Villa Bichinho · Estadia com alma mineira
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 
