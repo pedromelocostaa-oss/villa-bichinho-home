@@ -24,7 +24,7 @@ const Index = () => {
       <div className="mx-auto max-w-lg px-5">
 
         <header className="animate-fade-up pt-10 pb-8 text-center">
-          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border border-border bg-sand shadow-card overflow-hidden">
+          <div className="mx-auto mb-6 flex h-44 w-44 items-center justify-center rounded-lg border border-border bg-card p-2 shadow-card sm:h-48 sm:w-48">
             <img
               src={villaBichinhoLogo}
               alt="Villa Bichinho"
