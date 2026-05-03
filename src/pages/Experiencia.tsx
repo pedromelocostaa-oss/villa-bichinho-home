@@ -9,13 +9,19 @@ const experiences = [
     content: (
       <div className="space-y-3">
         <p className="font-body text-sm leading-relaxed text-earth">
-          O café da manhã é servido entre <strong className="text-primary">7h30 e 10h</strong>, na
+          O café da manhã é servido entre <strong className="text-primary">8h00 e 11h00</strong>, na
           varanda ou na sala de jantar, conforme a preferência e o clima.
         </p>
         <p className="font-body text-sm leading-relaxed text-earth">
           Cada manhã começa com produtos frescos e regionais: pão artesanal, queijo mineiro,
           frutas da estação, bolos caseiros, geleias e café coado na hora.
         </p>
+        <div className="rounded-lg border border-border/50 bg-background/40 px-4 py-3">
+          <p className="font-body text-xs text-muted-foreground">
+            <span className="font-semibold text-primary/70">Pontualidade: </span>
+            pedimos que respeite o horário para garantir a melhor experiência e organização do serviço. Solicitações fora do horário padrão estão sujeitas à disponibilidade.
+          </p>
+        </div>
         <p className="font-body text-sm leading-relaxed text-earth">
           Restrições alimentares? Nos avise com antecedência pelo WhatsApp — adoramos adaptar.
         </p>

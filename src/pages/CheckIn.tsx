@@ -91,7 +91,7 @@ const checkOutItems: AccordionItem[] = [
     content: (
       <div>
         <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
-          <span className="font-display text-2xl font-medium text-primary">11h00</span>
+          <span className="font-display text-2xl font-medium text-primary">12h00</span>
           <span className="font-body text-xs text-muted-foreground">horário limite</span>
         </div>
         <p className="font-body text-sm leading-relaxed text-earth">

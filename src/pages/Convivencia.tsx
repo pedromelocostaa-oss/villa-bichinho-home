@@ -3,11 +3,13 @@ import { IconHands } from "@/components/Icons";
 
 const orientations = [
   { title: "Silêncio é parte da experiência", desc: "Pedimos atenção ao volume de músicas e conversas após as 22h, especialmente nas áreas externas. O silêncio noturno de Bichinho é um dos maiores presentes da Villa." },
-  { title: "Animais de estimação", desc: "Amamos animais, e recebemos pets mediante consulta prévia. Entre em contato antes da chegada para combinarmos os detalhes." },
+  { title: "Animais de estimação", desc: "Amamos animais e recebemos pets mediante consulta prévia. Nas áreas comuns, eles devem circular sempre com guia e não podem ficar sozinhos no chalé por longos períodos. Não é permitido o uso de toalhas, lençóis ou roupas de cama para pets. O equipamento 'cata caca' disponibilizado deve ser devolvido no check-out. Danos ao enxoval ou mobiliário causados pelo animal serão cobrados à parte." },
+  { title: "Cuidado com o chalé", desc: "Pedimos atenção ao mobiliário, objetos decorativos e enxoval. Em caso de sujeira excessiva ou danos, poderá ser cobrada uma taxa adicional de limpeza ou reposição. Cada chalé é tratado como parte da alma da Villa — e agradecemos quando os hóspedes fazem o mesmo." },
   { title: "Áreas comuns com cuidado", desc: "A cozinha compartilhada, a sala de estar e os jardins são espaços de todos. Cuidamos juntos para que cada hóspede tenha uma experiência agradável." },
   { title: "Fumo", desc: "Fumantes são bem-vindos nas áreas externas designadas. No interior dos ambientes, pedimos que não se fume." },
   { title: "Crianças", desc: "A Villa é um espaço familiar e acolhedor. Crianças são bem-vindas — pedimos apenas atenção próxima nas áreas com desnível e jardins." },
-  { title: "Pertences e responsabilidades", desc: "A Villa não se responsabiliza por objetos deixados em áreas comuns. Guarde seus pertences de valor no quarto." },
+  { title: "Natureza e segurança", desc: "A Villa está inserida em um ambiente natural com terreno irregular. A circulação em áreas externas e trilhas deve ser feita com atenção. A Villa não se responsabiliza por acidentes decorrentes de uso inadequado dos espaços naturais." },
+  { title: "Pertences e responsabilidades", desc: "A Villa não se responsabiliza por objetos pessoais esquecidos, perdidos ou deixados em áreas comuns. Guarde seus pertences de valor no quarto." },
   { title: "Economia de recursos", desc: "Vivemos em harmonia com a natureza. Agradecemos o uso consciente de água e energia — desligue luzes e ar-condicionado ao sair dos ambientes." },
 ];
 
