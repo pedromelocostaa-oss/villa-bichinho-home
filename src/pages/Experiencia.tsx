@@ -112,17 +112,17 @@ const experiences = [
     ),
   },
   {
-    title: "Sala de estar & biblioteca",
-    tag: "Espaços internos",
+    title: "Academia",
+    tag: "Bem-estar",
     content: (
       <div className="space-y-3">
+        <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
+          <span className="font-display text-lg font-medium text-primary">7h às 22h</span>
+          <span className="font-body text-xs text-muted-foreground">diariamente</span>
+        </div>
         <p className="font-body text-sm leading-relaxed text-earth">
-          A sala de estar é um convite à lentidão — com livros selecionados, discos de vinil,
-          jogos de mesa e uma lareira para as noites frias de Minas.
-        </p>
-        <p className="font-body text-sm leading-relaxed text-earth">
-          Nossa pequena biblioteca tem títulos de arte, literatura brasileira, botânica e viagem.
-          Sinta-se em casa para folhear à vontade.
+          Para quem não abre mão do movimento mesmo em viagem. A academia da Villa está disponível
+          com horário amplo — da manhã cedo até a noite.
         </p>
       </div>
     ),
