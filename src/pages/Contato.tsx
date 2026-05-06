@@ -23,6 +23,24 @@ const contacts = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Mariana & Rafael",
+    origin: "São Paulo, SP",
+    text: "Lugar mágico. Cada detalhe pensado com carinho — saímos renovados, com vontade de voltar logo.",
+  },
+  {
+    name: "Juliana Costa",
+    origin: "Belo Horizonte, MG",
+    text: "A hospitalidade da Villa é única. O silêncio, o café, o cuidado da equipe… é o tipo de lugar que cura.",
+  },
+  {
+    name: "Pedro Henrique",
+    origin: "Rio de Janeiro, RJ",
+    text: "Bichinho já é especial, e a Villa eleva a experiência. Dormimos com o som dos grilos e acordamos com os pássaros.",
+  },
+];
+
 const faqs = [
   { question: "Posso fazer check-in antes das 14h?", answer: "Sim, mediante disponibilidade. Entre em contato pelo WhatsApp com antecedência — fazemos o possível para recebê-lo bem." },
   { question: "Há estacionamento na Villa?", answer: "Sim, temos área de estacionamento privativa para hóspedes." },
