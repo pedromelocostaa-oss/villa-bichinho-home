@@ -42,6 +42,12 @@ const experiences = [
         </p>
         <div className="rounded-lg border border-border/50 bg-background/40 px-4 py-3">
           <p className="font-body text-xs text-muted-foreground">
+            <span className="font-semibold text-primary/70">Disponível em: </span>
+            exclusivamente nos quartos <strong className="text-primary/80">Lavanda</strong> e <strong className="text-primary/80">Florestal</strong>.
+          </p>
+        </div>
+        <div className="rounded-lg border border-border/50 bg-background/40 px-4 py-3">
+          <p className="font-body text-xs text-muted-foreground">
             <span className="font-semibold text-primary/70">Inclusos: </span>
             toalhas, iluminação ambiente e aromaterapia com óleos essenciais da região.
           </p>
