@@ -70,6 +70,48 @@ const experiences = [
     ),
   },
   {
+    title: "Piscina",
+    tag: "Lazer",
+    content: (
+      <div className="space-y-3">
+        <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
+          <span className="font-display text-lg font-medium text-primary">10h às 18h</span>
+          <span className="font-body text-xs text-muted-foreground">diariamente</span>
+        </div>
+        <p className="font-body text-sm leading-relaxed text-earth">
+          A piscina da Villa é um convite ao descanso sem hora marcada. Um mergulho, uma leitura
+          à beira d'água, o sol de Minas no rosto — cada hora ali passa de um jeito diferente.
+        </p>
+        <div className="rounded-lg border border-border/50 bg-background/40 px-4 py-3">
+          <p className="font-body text-xs text-muted-foreground">
+            <span className="font-semibold text-primary/70">Toalhas: </span>
+            disponíveis mediante solicitação à equipe da Villa.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Caverna Gastronômica",
+    tag: "Gastronomia",
+    content: (
+      <div className="space-y-3">
+        <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
+          <span className="font-display text-lg font-medium text-primary">16h às 22h</span>
+          <span className="font-body text-xs text-muted-foreground">diariamente</span>
+        </div>
+        <p className="font-body text-sm leading-relaxed text-earth">
+          Um espaço à parte, com proposta intimista e ritmo próprio. A Caverna Gastronômica é onde
+          o fim de tarde encontra a noite — com calma e boa companhia.
+        </p>
+        <p className="font-body text-sm leading-relaxed text-earth">
+          O cardápio é enxuto e intencional: drinks autorais e pizzas artesanais, feitas com atenção
+          ao ingrediente e ao momento.
+        </p>
+      </div>
+    ),
+  },
+  {
     title: "Sala de estar & biblioteca",
     tag: "Espaços internos",
     content: (
@@ -110,7 +152,7 @@ const experiences = [
 const Experiencia = () => {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <PageLayout title="Experiência na Villa" subtitle="Café, áreas & vivências" icon={<IconCup className="h-full w-full" />}>
+    <PageLayout title="Experiência na Villa" subtitle="Café, lazer & gastronomia" icon={<IconCup className="h-full w-full" />}>
       <div className="px-5 py-8 space-y-6">
         <div className="animate-fade-up rounded-lg border border-border/60 bg-card/50 px-6 py-6">
           <div className="mb-4 flex justify-center">
