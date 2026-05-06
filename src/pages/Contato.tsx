@@ -94,7 +94,27 @@ const Contato = () => (
               <span className="font-display text-base font-medium text-primary">{number}</span>
             </a>
           ))}
+      </div>
+
+      <div className="animate-fade-up delay-400">
+        <p className="font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/50 mb-3 px-1">Quem já se hospedou</p>
+        <div className="space-y-3">
+          {testimonials.map(({ name, origin, text }) => (
+            <div key={name} className="rounded-lg border border-border/60 bg-card/40 px-5 py-5">
+              <p className="font-display text-sm italic leading-relaxed text-earth mb-4">
+                "{text}"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="h-px w-6 bg-primary/30" />
+                <div>
+                  <p className="font-body text-xs font-semibold text-primary leading-tight">{name}</p>
+                  <p className="font-body text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-0.5">{origin}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
       </div>
 
       <div className="animate-fade-up delay-300">
