@@ -94,6 +94,19 @@ const Contato = () => (
               <span className="font-display text-base font-medium text-primary">{number}</span>
             </a>
           ))}
+        </div>
+      </div>
+
+      <div className="animate-fade-up delay-300">
+        <p className="font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/50 mb-3 px-1">Dúvidas frequentes</p>
+        <div className="space-y-2">
+          {faqs.map(({ question, answer }) => (
+            <div key={question} className="rounded-lg border border-border/50 bg-card/30 px-5 py-4">
+              <p className="font-body text-sm font-semibold text-primary mb-1">{question}</p>
+              <p className="font-body text-xs leading-relaxed text-muted-foreground">{answer}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="animate-fade-up delay-400">
@@ -111,19 +124,6 @@ const Contato = () => (
                   <p className="font-body text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-0.5">{origin}</p>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      </div>
-
-      <div className="animate-fade-up delay-300">
-        <p className="font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/50 mb-3 px-1">Dúvidas frequentes</p>
-        <div className="space-y-2">
-          {faqs.map(({ question, answer }) => (
-            <div key={question} className="rounded-lg border border-border/50 bg-card/30 px-5 py-4">
-              <p className="font-body text-sm font-semibold text-primary mb-1">{question}</p>
-              <p className="font-body text-xs leading-relaxed text-muted-foreground">{answer}</p>
             </div>
           ))}
         </div>
