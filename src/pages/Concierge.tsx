@@ -67,8 +67,8 @@ const Concierge = () => (
 
       <div className="animate-fade-up delay-300 rounded-lg border border-border/40 bg-card/30 px-5 py-4">
         <p className="font-body text-xs leading-relaxed text-muted-foreground">
-          <span className="font-semibold text-primary/70">Atendimento: </span>
-          Das 8h às 21h. Para emergências fora desse horário, utilize os contatos de segurança
+          <span className="font-semibold text-primary/70">Recepção: </span>
+          Das 10h às 19h. Para emergências fora desse horário, utilize os contatos de segurança
           disponíveis na página de Contato.
         </p>
       </div>

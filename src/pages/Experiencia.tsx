@@ -96,9 +96,13 @@ const experiences = [
     tag: "Gastronomia",
     content: (
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
-          <span className="font-display text-lg font-medium text-primary">16h às 22h</span>
-          <span className="font-body text-xs text-muted-foreground">diariamente</span>
+        <div className="flex flex-wrap gap-2">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
+            <span className="font-display text-lg font-medium text-primary">16h às 22h</span>
+          </div>
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
+            <span className="font-body text-xs font-semibold text-primary">sex · sáb · dom</span>
+          </div>
         </div>
         <p className="font-body text-sm leading-relaxed text-earth">
           Um espaço à parte, com proposta intimista e ritmo próprio. A Caverna Gastronômica é onde
