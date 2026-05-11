@@ -25,6 +25,13 @@ const favorites: {
     occasion: "Pausa da tarde, sempre",
   },
   {
+    name: "Preferido do Rei",
+    moment: "jantar",
+    desc: "No coração de Bichinho, uma mesa que une cozinha mineira contemporânea, ambiente de extremo bom gosto e música ao vivo — jazz e blues nas sextas, MPB no estilo bossa nova aos domingos.",
+    special: "A curadoria musical e a cozinha criativa da chef Lucia Rotsen fazem desta experiência algo que vai muito além do prato.",
+    occasion: "Jantar com boa música, sempre",
+  },
+  {
     name: "Tragaluz",
     moment: "jantar",
     desc: "Uma das mesas mais bonitas da região. Cozinha contemporânea que dialoga com a tradição mineira, em ambiente com luz filtrada, pedra e madeira — sofisticação sem esforço.",

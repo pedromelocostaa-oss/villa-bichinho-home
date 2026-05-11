@@ -98,6 +98,33 @@ const experiences = [
     ),
   },
   {
+    title: "Restaurante da Villa",
+    tag: "Nossa cozinha",
+    content: (
+      <div className="space-y-3">
+        <div className="flex flex-wrap gap-2">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
+            <span className="font-display text-lg font-medium text-primary">19h às 22h</span>
+          </div>
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
+            <span className="font-body text-xs font-semibold text-primary">sex · sáb · dom</span>
+          </div>
+        </div>
+        <p className="font-body text-sm leading-relaxed text-earth">
+          O restaurante da Villa tem cardápio enxuto e intencional, com foco em massas artesanais
+          preparadas com cuidado. Uma proposta simples e honesta — boa comida, boa companhia,
+          sem pressa.
+        </p>
+        <div className="rounded-lg border border-border/50 bg-background/40 px-4 py-3">
+          <p className="font-body text-xs text-muted-foreground">
+            <span className="font-semibold text-primary/70">Reservas: </span>
+            recomendamos reservar com antecedência pelo WhatsApp para garantir sua mesa.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  {
     title: "Caverna Gastronômica",
     tag: "Gastronomia",
     content: (
@@ -115,8 +142,8 @@ const experiences = [
           o fim de tarde encontra a noite — com calma e boa companhia.
         </p>
         <p className="font-body text-sm leading-relaxed text-earth">
-          O cardápio é enxuto e intencional: drinks autorais e pizzas artesanais, feitas com atenção
-          ao ingrediente e ao momento.
+          O cardápio é enxuto e intencional: vinhos produzidos pela Vinícola Trindade, localizada
+          em Bichinho, e pizzas artesanais feitas com atenção ao ingrediente e ao momento.
         </p>
       </div>
     ),
