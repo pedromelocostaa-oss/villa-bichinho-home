@@ -58,15 +58,16 @@ const Index = () => {
           </div>
         </div>
 
-        <nav className="mb-10 space-y-3">
+        <nav aria-label="Seções do guia do hóspede" className="mb-10 space-y-3">
           <div className="grid grid-cols-2 gap-3">
             {navItems.map(({ label, sub, path, Icon, delay }) => (
               <button
                 key={path}
                 onClick={() => navigate(path)}
-                className={`animate-fade-up ${delay} group relative flex flex-col items-start gap-4 rounded-lg border border-border/70 bg-card/50 p-5 text-left transition-all duration-300 hover:border-primary/30 hover:bg-card hover:shadow-card active:scale-[0.98]`}
+                aria-label={`${label} — ${sub}`}
+                className={`animate-fade-up ${delay} group relative flex flex-col items-start gap-4 rounded-lg border border-border/70 bg-card/50 p-5 text-left transition-all duration-300 hover:border-primary/30 hover:bg-card hover:shadow-card active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[7.5rem]`}
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-border/80 bg-background/80 text-primary/60 transition-all duration-300 group-hover:border-primary/30 group-hover:bg-sand group-hover:text-primary">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-border/80 bg-background/80 text-primary/60 transition-all duration-300 group-hover:border-primary/30 group-hover:bg-sand group-hover:text-primary" aria-hidden="true">
                   <Icon className="h-6 w-6" />
                 </div>
                 <div>
@@ -77,36 +78,41 @@ const Index = () => {
                     {sub}
                   </p>
                 </div>
-                <div className="absolute right-4 top-4 h-1.5 w-1.5 rounded-full bg-primary/15 transition-colors duration-300 group-hover:bg-primary/30" />
+                <div className="absolute right-4 top-4 h-1.5 w-1.5 rounded-full bg-primary/15 transition-colors duration-300 group-hover:bg-primary/30" aria-hidden="true" />
               </button>
             ))}
           </div>
 
-          <button
-            onClick={() => navigate("/concierge")}
-            className="animate-fade-up delay-900 group w-full flex items-center gap-5 rounded-lg border border-primary/20 bg-primary/5 px-5 py-5 text-left transition-all duration-300 hover:border-primary/35 hover:bg-primary/8 hover:shadow-card active:scale-[0.99]"
-          >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary/60 transition-all duration-300 group-hover:bg-primary/20 group-hover:text-primary">
-              <IconWhatsApp className="h-6 w-6" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="font-body text-sm font-semibold text-primary leading-tight">
-                Concierge da Vila
-              </p>
-              <p className="mt-0.5 font-body text-xs text-muted-foreground leading-tight">
-                Atendimento personalizado pelo WhatsApp
-              </p>
-            </div>
+          {/* Card Concierge: dois alvos de toque distintos lado a lado (sem botão dentro de botão) */}
+          <div className="animate-fade-up delay-900 flex w-full items-center gap-3 rounded-lg border border-primary/20 bg-primary/5 p-2 shadow-none">
+            <button
+              type="button"
+              onClick={() => navigate("/concierge")}
+              aria-label="Abrir página do Concierge da Villa"
+              className="group flex flex-1 items-center gap-4 rounded-md px-3 py-3 text-left transition-all duration-200 hover:bg-primary/5 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary/60 transition-all duration-300 group-hover:bg-primary/20 group-hover:text-primary" aria-hidden="true">
+                <IconWhatsApp className="h-6 w-6" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-body text-sm font-semibold text-primary leading-tight">
+                  Concierge da Vila
+                </p>
+                <p className="mt-0.5 font-body text-xs text-muted-foreground leading-tight">
+                  Atendimento personalizado pelo WhatsApp
+                </p>
+              </div>
+            </button>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="shrink-0 rounded-lg border border-primary/25 bg-primary px-4 py-2.5 font-body text-xs font-semibold text-primary-foreground transition-all duration-200 hover:bg-primary/90 active:scale-95"
+              aria-label="Conversar agora no WhatsApp"
+              className="shrink-0 rounded-lg border border-primary/25 bg-primary px-4 py-3 font-body text-xs font-semibold text-primary-foreground transition-all duration-200 hover:bg-primary/90 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
             >
               Conversar
             </a>
-          </button>
+          </div>
         </nav>
 
         <div className="mb-10 text-center">
