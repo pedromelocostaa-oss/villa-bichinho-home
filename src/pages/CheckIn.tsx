@@ -11,20 +11,32 @@ const AccordionSection = ({ items }: { items: AccordionItem[] }) => {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <div className="divide-y divide-border/50 rounded-lg border border-border/60 overflow-hidden">
-      {items.map(({ title, content }, i) => (
-        <div key={title}>
-          <button
-            onClick={() => setOpen(open === i ? null : i)}
-            className="flex w-full items-center justify-between gap-4 bg-card/40 px-5 py-4 text-left transition-colors hover:bg-card/70"
-          >
-            <span className="font-body text-sm font-semibold text-primary">{title}</span>
-            <IconChevronDown className={`h-4 w-4 shrink-0 text-primary/50 transition-transform duration-300 ${open === i ? "rotate-180" : ""}`} />
-          </button>
-          <div className={`overflow-hidden transition-all duration-300 ease-in-out ${open === i ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>
-            <div className="bg-background/40 px-5 py-5">{content}</div>
+      {items.map(({ title, content }, i) => {
+        const isOpen = open === i;
+        const panelId = `acc-panel-${i}-${title.replace(/\s+/g, "-")}`;
+        return (
+          <div key={title}>
+            <button
+              onClick={() => setOpen(isOpen ? null : i)}
+              aria-expanded={isOpen}
+              aria-controls={panelId}
+              className="flex w-full items-center justify-between gap-4 bg-card/40 px-5 py-4 text-left transition-colors hover:bg-card/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/40 min-h-[3.25rem]"
+            >
+              <span className="font-body text-sm font-semibold text-primary">{title}</span>
+              <IconChevronDown className={`h-4 w-4 shrink-0 text-primary/50 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} aria-hidden="true" />
+            </button>
+            <div
+              id={panelId}
+              role="region"
+              className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+            >
+              <div className="overflow-hidden">
+                <div className="bg-background/40 px-5 py-5">{content}</div>
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
