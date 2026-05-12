@@ -22,27 +22,40 @@ const CopyField = ({ label, value }: { label: string; value: string }) => {
     setTimeout(() => setCopied(false), 2000);
   };
   return (
-    <div className="rounded-lg border border-border/60 bg-card/40 overflow-hidden">
-      <div className="px-5 pt-4 pb-1">
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label={`Copiar ${label}: ${value}`}
+      className="group block w-full rounded-lg border border-border/60 bg-card/40 text-left overflow-hidden transition-all duration-200 hover:border-primary/30 hover:bg-card/60 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+    >
+      <div className="px-5 pt-4 pb-1 flex items-center justify-between">
         <p className="font-body text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">{label}</p>
+        <span className="font-body text-[10px] uppercase tracking-[0.2em] text-primary/40 group-hover:text-primary/70">
+          {copied ? "Copiado" : "Tocar para copiar"}
+        </span>
       </div>
       <div className="flex items-center justify-between px-5 pb-4 gap-3">
         <p className="font-display text-xl font-medium text-primary tracking-wide break-all">{value}</p>
-        <button
-          onClick={handleCopy}
-          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-            copied ? "border-primary/30 bg-primary/10 text-primary" : "border-border text-muted-foreground hover:border-primary/30 hover:bg-sand hover:text-primary"
+        <span
+          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+            copied ? "border-primary/30 bg-primary/10 text-primary" : "border-border text-muted-foreground group-hover:border-primary/30 group-hover:bg-sand group-hover:text-primary"
           }`}
+          aria-hidden="true"
         >
           {copied ? <IconCheck className="h-4 w-4" /> : <IconCopy className="h-4 w-4" />}
-        </button>
+        </span>
       </div>
-      {copied && (
-        <div className="border-t border-border/40 bg-primary/5 px-5 py-2">
-          <p className="font-body text-xs text-primary/70 font-medium">Copiado!</p>
+      <div
+        className={`grid transition-all duration-300 ${copied ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+        aria-live="polite"
+      >
+        <div className="overflow-hidden">
+          <div className="border-t border-border/40 bg-primary/5 px-5 py-2">
+            <p className="font-body text-xs text-primary/70 font-medium">Copiado para a área de transferência!</p>
+          </div>
         </div>
-      )}
-    </div>
+      </div>
+    </button>
   );
 };
 
