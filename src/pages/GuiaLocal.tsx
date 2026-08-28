@@ -25,11 +25,11 @@ const favorites: {
     occasion: "Pausa da tarde, sempre",
   },
   {
-    name: "Preferido do Rei",
+    name: "Restaurante da Villa Bichinho",
     moment: "jantar",
-    desc: "No coração de Bichinho, uma mesa que une cozinha mineira contemporânea, ambiente de extremo bom gosto e música ao vivo — jazz e blues nas sextas, MPB no estilo bossa nova aos domingos.",
-    special: "A curadoria musical e a cozinha criativa da chef Lucia Rotsen fazem desta experiência algo que vai muito além do prato.",
-    occasion: "Jantar com boa música, sempre",
+    desc: "Uma seleção especial de pratos e pizzas preparados para que você possa aproveitar uma experiência de jantar com sabor e aconchego, sem precisar sair da Villa Bichinho. Tudo pensado para que a noite seja vivida sem pressa, no conforto e na privacidade do seu chalé.",
+    special: "A comodidade de um jantar especial dentro da própria Villa — sem abrir mão do sabor e do cuidado em cada detalhe.",
+    occasion: "Noite na Villa, sem sair do seu refúgio",
   },
   {
     name: "Tragaluz",
