@@ -2,8 +2,8 @@ import { useState } from "react";
 import { PageLayout } from "@/components/PageLayout";
 import { IconWifi, IconCopy, IconCheck } from "@/components/Icons";
 
-const NETWORK = "VillaBichinho";
-const PASSWORD = "natureza2024";
+const NETWORK = "Villa Bichinho";
+const PASSWORD = "villabichinho26";
 
 const CopyField = ({ label, value }: { label: string; value: string }) => {
   const [copied, setCopied] = useState(false);
