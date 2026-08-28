@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components/PageLayout";
 import { IconCompass } from "@/components/Icons";
 
-type MomentKey = "almoco" | "doce" | "jantar";
+type MomentKey = "almoco" | "doce" | "jantar" | "vinho";
 
 const favorites: {
   name: string;
@@ -66,12 +66,20 @@ const favorites: {
     special: "Arquitetura colonial, pratos que celebram Minas com elegância e uma atmosfera inigualável.",
     occasion: "Jantar inesquecível em Tiradentes",
   },
+  {
+    name: "Vinícola Trindade",
+    moment: "vinho",
+    desc: "Aos pés da Serra de São José, a Vinícola Trindade é uma das pioneiras da vitivinicultura de inverno em Minas Gerais. Vinhedos abertos à visitação, degustação guiada dos rótulos da casa e uma vista que por si só já vale a parada.",
+    special: "Um encontro raro entre terroir mineiro, hospitalidade da família e vinhos que traduzem o clima das montanhas.",
+    occasion: "Tarde de degustação com vista para a serra",
+  },
 ];
 
 const moments: { key: MomentKey; label: string }[] = [
   { key: "almoco", label: "para almoço sem pressa" },
   { key: "doce", label: "para uma pausa doce" },
   { key: "jantar", label: "para jantar especial" },
+  { key: "vinho", label: "para uma tarde de vinho" },
 ];
 
 const FavCard = ({ name, desc, special, occasion }: (typeof favorites)[0]) => (
