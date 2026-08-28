@@ -25,6 +25,13 @@ const favorites: {
     occasion: "Pausa da tarde, sempre",
   },
   {
+    name: "Doces Vitorianos",
+    moment: "doce",
+    desc: "Um pedacinho dos sabores de Bichinho. Doces caseiros e tradicionais, preparados com aquele jeitinho mineiro que atravessa gerações. Uma parada que vale a pena para conhecer — e levar um pouco de Bichinho com você.",
+    special: "A receita pode ser simples, mas o sabor carrega história. Difícil passar sem levar alguma coisa.",
+    occasion: "Para guardar um gostinho de Bichinho",
+  },
+  {
     name: "Restaurante da Villa Bichinho",
     moment: "jantar",
     desc: "Uma seleção especial de pratos e pizzas preparados para que você possa aproveitar uma experiência de jantar com sabor e aconchego, sem precisar sair da Villa Bichinho. Tudo pensado para que a noite seja vivida sem pressa, no conforto e na privacidade do seu chalé.",
