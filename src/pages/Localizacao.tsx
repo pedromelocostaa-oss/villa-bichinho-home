@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components/PageLayout";
 import { IconMap, IconExternal } from "@/components/Icons";
 
-const COORDS = { lat: -20.9631, lng: -44.1894 };
+const COORDS = { lat: -21.0965002, lng: -44.119081 };
 const ADDRESS = "Bichinho, Prados – MG, 36305-000";
 const MAPS_URL = `https://www.google.com/maps/dir/?api=1&destination=${COORDS.lat},${COORDS.lng}`;
 const EMBED_URL = `https://www.openstreetmap.org/export/embed.html?bbox=${COORDS.lng - 0.01},${COORDS.lat - 0.01},${COORDS.lng + 0.01},${COORDS.lat + 0.01}&layer=mapnik&marker=${COORDS.lat},${COORDS.lng}`;
@@ -17,7 +17,7 @@ const tips = [
   { title: "De carro via BR-265", desc: "Saindo de São João del-Rei, siga pela BR-265 até Prados. Em Prados, siga as placas para Bichinho por aproximadamente 7 km." },
   { title: "De Belo Horizonte", desc: "Aproximadamente 2h30 de viagem. Pegue a BR-040 sentido Barbacena, depois acesse a BR-265 em direção a São João del-Rei e siga até Prados/Bichinho." },
   { title: "Estrada de acesso", desc: "O último trecho é por estrada de terra em boas condições. Veículos comuns chegam sem dificuldade." },
-  { title: "Quando o GPS variar", desc: "Use as coordenadas: -20.9631, -44.1894 — elas levam direto à Vila." },
+  { title: "Quando o GPS variar", desc: "Use as coordenadas: -21.0965002, -44.119081 — elas levam direto à Vila." },
 ];
 
 const Localizacao = () => (
