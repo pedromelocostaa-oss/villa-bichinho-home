@@ -38,7 +38,7 @@ const experiences = [
       <div className="space-y-4">
         <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
           <span className="font-display text-lg font-medium text-primary">12h às 16h</span>
-          <span className="font-body text-xs text-muted-foreground">diariamente</span>
+          <span className="font-body text-xs text-muted-foreground">sexta a domingo</span>
         </div>
         <p className="font-body text-sm leading-relaxed text-earth">
           Para uma pausa gostosa entre um mergulho e outro, consulte as opções servidas no Bar da Piscina.
@@ -59,7 +59,7 @@ const experiences = [
       <div className="space-y-4">
         <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
           <span className="font-display text-lg font-medium text-primary">A partir das 19h</span>
-          <span className="font-body text-xs text-muted-foreground">diariamente</span>
+          <span className="font-body text-xs text-muted-foreground">sexta a domingo</span>
         </div>
         <p className="font-body text-sm leading-relaxed text-earth">
           À noite, a Caverna Gastronômica recebe você com sabores preparados para serem apreciados sem pressa.
