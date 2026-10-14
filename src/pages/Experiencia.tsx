@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { PageLayout } from "@/components/PageLayout";
-import { IconCup, IconChevronDown, IconWave } from "@/components/Icons";
+import { Button } from "@/components/ui/button";
+import { IconCup, IconChevronDown, IconExternal, IconWave } from "@/components/Icons";
+
+const MENU_BASE_URL = "https://villa-menu-magic.lovable.app";
 
 const experiences = [
   {
@@ -25,6 +28,48 @@ const experiences = [
         <p className="font-body text-sm leading-relaxed text-earth">
           Restrições alimentares? Nos avise com antecedência pelo WhatsApp — adoramos adaptar.
         </p>
+      </div>
+    ),
+  },
+  {
+    title: "Bar da Piscina",
+    tag: "Sabores à beira d'água",
+    content: (
+      <div className="space-y-4">
+        <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
+          <span className="font-display text-lg font-medium text-primary">12h às 16h</span>
+          <span className="font-body text-xs text-muted-foreground">diariamente</span>
+        </div>
+        <p className="font-body text-sm leading-relaxed text-earth">
+          Para uma pausa gostosa entre um mergulho e outro, consulte as opções servidas no Bar da Piscina.
+        </p>
+        <Button asChild variant="outline" size="lg" className="h-auto min-h-11 w-full whitespace-normal px-4 py-3 text-center font-body text-sm">
+          <a href={`${MENU_BASE_URL}/piscina`} target="_blank" rel="noopener noreferrer">
+            Ver cardápio do Bar da Piscina
+            <IconExternal aria-hidden="true" />
+          </a>
+        </Button>
+      </div>
+    ),
+  },
+  {
+    title: "Caverna Gastronômica",
+    tag: "Noites na Villa",
+    content: (
+      <div className="space-y-4">
+        <div className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-4 py-2">
+          <span className="font-display text-lg font-medium text-primary">A partir das 19h</span>
+          <span className="font-body text-xs text-muted-foreground">diariamente</span>
+        </div>
+        <p className="font-body text-sm leading-relaxed text-earth">
+          À noite, a Caverna Gastronômica recebe você com sabores preparados para serem apreciados sem pressa.
+        </p>
+        <Button asChild variant="outline" size="lg" className="h-auto min-h-11 w-full whitespace-normal px-4 py-3 text-center font-body text-sm">
+          <a href={`${MENU_BASE_URL}/caverna`} target="_blank" rel="noopener noreferrer">
+            Ver menu da Caverna Gastronômica
+            <IconExternal aria-hidden="true" />
+          </a>
+        </Button>
       </div>
     ),
   },
