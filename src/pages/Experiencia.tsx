@@ -9,7 +9,7 @@ const experiences = [
     content: (
       <div className="space-y-3">
         <p className="font-body text-sm leading-relaxed text-earth">
-          O café da manhã é servido entre <strong className="text-primary">8h00 e 11h00</strong>, na
+          O café da manhã é servido entre <strong className="text-primary">8h30 e 11h00</strong>, na
           varanda ou na sala de jantar, conforme a preferência e o clima.
         </p>
         <p className="font-body text-sm leading-relaxed text-earth">
